@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Institution | LifeLink+</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .form-section { transition: all 0.3s ease; }
+        .form-section:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        
+        /* Custom Checkbox Design */
+        .custom-checkbox:checked + div {
+            background-color: #eff6ff;
+            border-color: #2563eb;
+            color: #1e40af;
+        }
+        .custom-checkbox:checked + div i {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2 text-red-600">
+                    <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight">LifeLink+</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-blue-900 text-white py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Register Your Hospital</h1>
+            <p class="text-blue-200 text-lg">Join India's first verified platelet & rare-blood emergency network.</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-10 -mt-8">
+        <form id="registrationForm" onsubmit="handleRegistration(event)" class="space-y-8">
+
+            <section class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 form-section">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">1</div>
+                    Institution Details
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Institution Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="instName" required placeholder="e.g. Manipal Hospital, Old Airport Road" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Parent Hospital (Optional)</label>
+                        <input type="text" id="parentHosp" placeholder="If part of a chain" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Category <span class="text-red-500">*</span></label>
+                        <select id="category" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                            <option value="">Select Category</option>
+                            <option value="Private">Private Hospital</option>
+                            <option value="Government">Government / Public</option>
+                            <option value="Charitable">Charitable Trust</option>
+                            <option value="NGO">NGO / Blood Bank</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">License / Registration Number <span class="text-red-500">*</span></label>
+                        <input type="text" required placeholder="e.g. KMC-REG-2024-XXXX" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition font-mono uppercase">
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 form-section">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">2</div>
+                    Location & Contact
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Contact Person Name <span class="text-red-500">*</span></label>
+                        <input type="text" required placeholder="Administrator Name" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Mobile Number <span class="text-red-500">*</span></label>
+                        <input type="tel" required pattern="[0-9]{10}" placeholder="10 Digit Mobile" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Official Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" required placeholder="admin@hospital.com" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Address Line 1 <span class="text-red-500">*</span></label>
+                        <input type="text" required placeholder="Street Address, Area" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">City <span class="text-red-500">*</span></label>
+                        <select id="city" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                            <option value="">Select City</option>
+                            <option value="Bangalore">Bengaluru</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Chennai">Chennai</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">PIN Code <span class="text-red-500">*</span></label>
+                        <input type="text" id="pincode" required pattern="[0-9]{6}" placeholder="6 Digit PIN" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        <p class="text-xs text-red-500 mt-1 hidden" id="pinError">Enter valid 6-digit PIN</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 form-section">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">3</div>
+                    Medical Capabilities
+                </h2>
+
+                <label class="block text-sm font-bold text-gray-700 mb-3">Services Offered (Select all that apply)</label>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="peer sr-only custom-checkbox" value="Whole Blood">
+                        <div class="p-4 rounded-xl border border-gray-200 text-center hover:bg-gray-50 transition h-full flex flex-col items-center justify-center gap-2">
+                            <i class="fa-solid fa-droplet text-gray-400 text-xl"></i>
+                            <span class="text-sm font-medium">Whole Blood</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="peer sr-only custom-checkbox" checked value="Platelets">
+                        <div class="p-4 rounded-xl border border-gray-200 text-center hover:bg-gray-50 transition h-full flex flex-col items-center justify-center gap-2">
+                            <i class="fa-solid fa-layer-group text-gray-400 text-xl"></i>
+                            <span class="text-sm font-medium">Platelets (SDP)</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="peer sr-only custom-checkbox" value="Stem Cell">
+                        <div class="p-4 rounded-xl border border-gray-200 text-center hover:bg-gray-50 transition h-full flex flex-col items-center justify-center gap-2">
+                            <i class="fa-solid fa-dna text-gray-400 text-xl"></i>
+                            <span class="text-sm font-medium">Stem Cell</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="peer sr-only custom-checkbox" value="Rare Blood">
+                        <div class="p-4 rounded-xl border border-gray-200 text-center hover:bg-gray-50 transition h-full flex flex-col items-center justify-center gap-2">
+                            <i class="fa-solid fa-flask text-gray-400 text-xl"></i>
+                            <span class="text-sm font-medium">Rare Groups</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Apheresis Machine Available?</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="apheresis" value="yes" class="w-5 h-5 text-blue-600"> Yes
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="apheresis" value="no" class="w-5 h-5 text-blue-600"> No
+                            </label>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1">Required for Single Donor Platelets (SDP)</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Rare Blood Stock Capability?</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="rare_stock" value="yes" class="w-5 h-5 text-blue-600"> Yes
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="rare_stock" value="no" class="w-5 h-5 text-blue-600"> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-red-50 border border-red-100 rounded-xl">
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" checked class="w-5 h-5 text-red-600 mt-1">
+                        <div>
+                            <span class="font-bold text-red-800 text-sm">Participate in Urgent Alerts</span>
+                            <p class="text-xs text-red-600 mt-1">I agree to receive emergency broadcast notifications for critical low-stock situations (max 2/day).</p>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 form-section">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">4</div>
+                    Account Security
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Admin Username <span class="text-red-500">*</span></label>
+                        <input type="text" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Upload Verification Doc <span class="text-red-500">*</span></label>
+                        <input type="file" required class="w-full p-2 border border-gray-300 rounded-xl bg-gray-50 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        <p class="text-xs text-gray-400 mt-1">PDF/JPG of Medical License or Letterhead.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Password <span class="text-red-500">*</span></label>
+                        <input type="password" id="password" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Confirm Password <span class="text-red-500">*</span></label>
+                        <input type="password" id="confirmPassword" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        <p class="text-xs text-red-500 mt-1 hidden" id="passError">Passwords do not match</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-100 pt-6">
+                    <label class="flex items-center gap-3 cursor-pointer mb-6">
+                        <input type="checkbox" required class="w-5 h-5 text-blue-600">
+                        <span class="text-sm text-gray-600">I agree to the <a href="#" class="text-blue-600 underline">Terms & Conditions</a> and certify that the information provided is accurate.</span>
+                    </label>
+
+                    <button type="submit" class="w-full bg-blue-900 text-white font-bold py-4 rounded-xl shadow-xl hover:bg-blue-800 transition-all transform active:scale-95 flex justify-center items-center gap-3">
+                        <span>Create Account & Access Dashboard</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+        </form>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 mt-12 text-center">
+        <p class="text-sm text-gray-500">Already have an account? <a href="login_form_hospital.html" class="text-blue-600 font-bold">Login here</a></p>
+        <p class="text-xs text-gray-400 mt-2">© 2025 LifeLink+ | Secure Medical Network</p>
+    </footer>
+
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault();
+
+            // --- VALIDATION ---
+            const pass = document.getElementById('password').value;
+            const confPass = document.getElementById('confirmPassword').value;
+            const pin = document.getElementById('pincode').value;
+            const passError = document.getElementById('passError');
+            const pinError = document.getElementById('pinError');
+            
+            let isValid = true;
+
+            if (pass !== confPass) {
+                passError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                passError.classList.add('hidden');
+            }
+
+            if (!/^\d{6}$/.test(pin)) {
+                pinError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                pinError.classList.add('hidden');
+            }
+
+            if (!isValid) return;
+
+            // --- DATA EXTRACTION ---
+            const name = document.getElementById('instName').value;
+            const city = document.getElementById('category').value; // Simplified for demo
+            const locationName = document.getElementById('city').value + ", " + document.getElementById('pincode').value;
+
+            // --- BACKEND INTEGRATION (Hackathon Simulation) ---
+            
+            // TODO: On form submission send data to backend endpoint '/api/registerHospital'.
+            // For now, we simulate the session creation in localStorage so the Admin Page works immediately.
+
+            const simulatedSession = {
+                id: "HOSP-NEW-" + Math.floor(Math.random() * 1000),
+                name: name,
+                location: locationName,
+                coordinates: [12.9716, 77.5946], // Defaulting to Central Bangalore for demo
+                geofenceRadius: 10
+            };
+
+            // Overwrite the 'Database' in Admin Page
+            // In a real app, the Admin Page would fetch this from the API via token.
+            // Here we inject it so index3.html reads THIS hospital instead of "Manipal".
+            
+            // Note: To make this work with the provided index3.html, we'd typically need to 
+            // modify index3.html to read from localStorage first.
+            // Assuming index3.html has: const HOSPITAL_DATA = JSON.parse(localStorage.getItem('CURRENT_SESSION')) || DEFAULT;
+            
+            console.log("Registering:", simulatedSession);
+            alert("Registration Successful! Redirecting to Admin Dashboard...");
+            
+            // Redirect
+            window.location.href = "index3.html"; // Assuming index3.html is in the same folder
+        }
+    </script>
+</body>
+</html>

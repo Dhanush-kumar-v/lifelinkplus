@@ -1,0 +1,44 @@
+/* ### 2. CSS File (`donor_dashboard/style.css`) */
+/* --- CSS STYLES --- */
+body { font-family: 'Inter', sans-serif; }
+
+/* Custom Colors for Donor Theme */
+.nav-btn.active {
+    background-color: #ecfdf5; /* Emerald-50 */
+    color: #047857; /* Emerald-700 */
+    border-right: 4px solid #047857;
+}
+
+/* Toggle Switch */
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: #10b981; /* Emerald-500 */
+}
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #10b981; /* Emerald-500 */
+}
+.toggle-checkbox {
+    right: 0;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Radar Animations */
+@keyframes pingSlow {
+    75%, 100% { transform: scale(2); opacity: 0; }
+}
+@keyframes pingSlower {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+.animate-ping-slow { animation: pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.animate-ping-slower { animation: pingSlower 3s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+/* Alert Card Animation */
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.card-enter { animation: slideUpFade 0.5s ease-out forwards; }
+
+.hidden { display: none; }

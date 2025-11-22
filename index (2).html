@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLink+ | Emergency Platelet Network</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-2 text-red-600">
+                    <i class="fa-solid fa-heart-pulse text-3xl"></i>
+                    <span class="font-bold text-2xl tracking-tight">LifeLink+</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#portals" class="text-gray-600 hover:text-red-600 font-medium">Portals</a>
+                    <a href="#awareness" class="text-gray-600 hover:text-red-600 font-medium">Why It Matters</a>
+                    <a href="donor_form.html" class="bg-red-600 text-white px-5 py-2.5 rounded-full font-bold hover:bg-red-700 transition shadow-lg">
+                        Become a Donor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-bg h-[600px] flex items-center text-white relative">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Emergency Response System</span>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Platelets Expire in <span class="text-red-500">5 Days</span>.<br>
+                Don't Let Them Wait.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                India's first hospital-driven network connecting verified donors to urgent needs in real-time. No spam. No delays.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="donor_form.html" class="urgent-btn bg-red-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-hand-holding-medical"></i> I Want to Donate
+                </a>
+                <a href="#portals" class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-doctor"></i> Hospital Login
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 w-full bg-black/50 backdrop-blur-sm py-4 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 flex justify-between text-sm font-mono text-gray-300">
+                <span><i class="fa-solid fa-circle text-green-500 text-[10px] mr-2"></i>System Status: ONLINE</span>
+                <span><i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>Active Requests: <span id="stat-req">12</span></span>
+                <span><i class="fa-solid fa-users text-blue-400 mr-2"></i>Verified Donors: <span id="stat-donor">4520</span></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portals" class="py-20 -mt-24 relative z-20">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-blue-600 shadow-xl">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-3xl mb-6">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Hospitals & Admins</h3>
+                <p class="text-gray-600 mb-6">Broadcast emergency needs, manage geofenced alerts, and search the stem cell registry.</p>
+                <a href="hospital_form.html" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    Access Console <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-purple-600 shadow-xl">
+                <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-3xl mb-6">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Blood Banks</h3>
+                <p class="text-gray-600 mb-6">Monitor network demands, share inventory status, and coordinate donation camps.</p>
+                <a href="bloodbank_form.html" class="text-purple-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    Partner Login <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="awareness" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-red-600 font-bold uppercase tracking-wider text-sm">Knowledge Saves Lives</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2">Why LifeLink+ is Different</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 md:order-1">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex-shrink-0 flex items-center justify-center text-red-600 text-xl font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">The 5-Day Shelf Life</h3>
+                            <p class="text-gray-600">
+                                Platelets cannot be stored like whole blood. They expire in just 5 days. That's why we don't use a static directory. 
+                                We use <strong>Geofenced Alerts</strong> to find fresh donors exactly when they are needed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center text-blue-600 text-xl font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Stem Cells ≠ Surgery</h3>
+                            <p class="text-gray-600">
+                                Many fear "Bone Marrow Donation," but 90% of stem cell donations (PBSC) are just like giving blood. 
+                                Our <strong>Registry Search</strong> connects leukemia patients to this simple, life-saving cure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 relative">
+                     <div class="bg-gray-100 rounded-3xl p-8 relative overflow-hidden h-80 flex items-center justify-center">
+                         <i class="fa-solid fa-layer-group text-9xl text-red-200 absolute -bottom-10 -right-10"></i>
+                         <div class="text-center relative z-10">
+                             <p class="text-6xl font-bold text-red-600 mb-2">5 Days</p>
+                             <p class="text-gray-500 font-medium">Platelet Shelf Life</p>
+                             <div class="mt-6 bg-white px-6 py-3 rounded-xl shadow-md inline-block">
+                                 <span class="text-green-600 font-bold"><i class="fa-solid fa-check mr-2"></i>Solved by LifeLink+</span>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-gray-50 rounded-2xl">
+                    <p class="text-3xl font-bold text-gray-900 mb-1">10km</p>
+                    <p class="text-xs text-gray-500 uppercase">Geofence Radius</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-2xl">
+                    <p class="text-3xl font-bold text-gray-900 mb-1">12hr</p>
+                    <p class="text-xs text-gray-500 uppercase">Max Urgency Timer</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-2xl">
+                    <p class="text-3xl font-bold text-gray-900 mb-1">0%</p>
+                    <p class="text-xs text-gray-500 uppercase">Spam Requests</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-2xl">
+                    <p class="text-3xl font-bold text-gray-900 mb-1">100%</p>
+                    <p class="text-xs text-gray-500 uppercase">Verified Hospitals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <i class="fa-solid fa-heart-pulse text-red-500 text-2xl"></i>
+                <span class="font-bold text-xl">LifeLink+</span>
+            </div>
+            <p class="text-gray-500 text-sm">© 2025 Xcelerate Hackathon Project. Built for Impact.</p>
+        </div>
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+</html>
